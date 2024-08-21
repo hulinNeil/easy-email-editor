@@ -7,7 +7,7 @@ import {
   getTdBoundaryIndex,
   getBoundaryRectAndElement,
 } from './util';
-import { AdvancedTableBlock } from '@core/blocks/advanced/generateAdvancedTableBlock';
+import { IAdvancedTableData } from 'easy-email-core';
 
 interface IBorderTool {
   top: Element;
@@ -36,8 +36,8 @@ class TableColumnTool {
   root: Element | undefined = undefined;
 
   tableMenu?: TableOperationMenu;
-  changeTableData?: (e: AdvancedTableBlock['data']['value']['tableSource']) => void;
-  tableData: AdvancedTableBlock['data']['value']['tableSource'] = [];
+  changeTableData?: (e: IAdvancedTableData[][]) => void;
+  tableData: IAdvancedTableData[][] = [];
 
   constructor(borderTool: IBorderTool, root: Element) {
     if (!borderTool || !root) {

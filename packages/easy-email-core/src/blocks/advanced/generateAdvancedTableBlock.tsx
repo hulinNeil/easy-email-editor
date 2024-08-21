@@ -1,10 +1,9 @@
 import { BasicType } from '@core/constants';
-import { IBlock, IBlockData } from '@core/typings';
+import { IBlockData } from '@core/typings';
 import { createCustomBlock } from '@core/utils/createCustomBlock';
-import { TemplateEngineManager, createBlock, t } from '@core/utils';
+import { t } from '@core/utils';
 import { merge } from 'lodash';
 import React from 'react';
-import { IPage, standardBlocks } from '../standard';
 import { BasicBlock } from '@core/components/BasicBlock';
 
 export function generateAdvancedTableBlock(option: {
@@ -77,7 +76,7 @@ export function generateAdvancedTableBlock(option: {
   });
 }
 
-export interface ITableData {
+export interface IAdvancedTableData {
   content: string;
   colSpan?: number;
   rowSpan?: number;
@@ -92,6 +91,6 @@ export type AdvancedTableBlock = IBlockData<
   },
   {
     content?: string;
-    tableSource: ITableData[][];
+    tableSource: IAdvancedTableData[][];
   }
 >;
